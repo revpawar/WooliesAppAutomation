@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="1" parallel="classes" name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="5">
+  <test thread-count="1" parallel="classes" name="SmoketestChrome(failed)" verbose="5">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.woolsworth.runner.Runner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="tearDownClass"/>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="postCondition"/>
+        </methods>
+      </class> <!-- com.woolsworth.runner.Runner -->
+    </classes>
+  </test> <!-- SmoketestChrome(failed) -->
+  <test thread-count="1" parallel="classes" name="Smoketestfirefox(failed)" verbose="5">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="com.woolsworth.runner.Runner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="tearDownClass"/>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="postCondition"/>
+        </methods>
+      </class> <!-- com.woolsworth.runner.Runner -->
+    </classes>
+  </test> <!-- Smoketestfirefox(failed) -->
+</suite> <!-- Failed suite [Suite] -->

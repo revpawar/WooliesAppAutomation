@@ -1,0 +1,190 @@
+<html>
+<head>
+<title>TestNG:  Test1</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test1</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+</tr><tr>
+<td>Started on:</td><td>Sat Mar 09 01:13:43 AEDT 2024</td>
+</tr>
+<tr><td>Total time:</td><td>10 seconds (10873 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.woolsworth.runner.Runner.runScenario()'><b>runScenario</b><br>Test class: com.woolsworth.runner.Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Add items to the cart", "cart and checkout"</td>
+<td><div><pre>io.cucumber.core.exception.CucumberException: Could not convert arguments for step [Search for Products and click add to cart] defined at &apos;com.woolsworth.stepdefinitions.CartCheckOut.ProductSearch(java.util.List&lt;com.woolsworth.userjourney.Products&gt;)&apos;.
+It appears you did not register a data table type.
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.registerDataTableTypeInConfiguration(PickleStepDefinitionMatch.java:96)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:50)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: io.cucumber.datatable.UndefinedDataTableTypeException: Can&apos;t convert DataTable to List&lt;com.woolsworth.userjourney.Products&gt;.
+Please review these problems:
+
+ - There was no table entry or table row transformer registered for com.woolsworth.userjourney.Products.
+   Please consider registering a table entry or row transformer.
+
+ - There was no table cell transformer registered for com.woolsworth.userjourney.Products.
+   Please consider registering a table cell transformer.
+
+ - There was no default table entry transformer registered to transform com.woolsworth.userjourney.Products.
+   Please consider registering a default table entry transformer.
+
+ - There was no default table cell transformer registered to transform com.woolsworth.userjourney.Products.
+   Please consider registering a default table cell transformer.
+
+Note: Usually solving one is enough
+	at io.cucumber.datatable.UndefinedDataTableTypeException.listNoConverterDefined(UndefinedDataTableTypeException.java:102)
+	at io.cucumber.datatable.DataTableTypeRegistryTableConverter.toList(DataTableTypeRegistryTableConverter.java:144)
+	at io.cucumber.datatable.DataTableTypeRegistryTableConverter.convert(DataTableTypeRegistryTableConverter.java:110)
+	at io.cucumber.datatable.DataTable.convert(DataTable.java:478)
+	at io.cucumber.core.stepexpression.StepExpressionFactory.lambda$createExpression$0(StepExpressionFactory.java:66)
+	at io.cucumber.core.stepexpression.DataTableArgument.getValue(DataTableArgument.java:20)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:47)
+	... 24 more
+</pre></div><a href='#' onClick='toggleBox("stack-trace220133685", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace220133685'><pre>io.cucumber.core.exception.CucumberException: Could not convert arguments for step [Search for Products and click add to cart] defined at &apos;com.woolsworth.stepdefinitions.CartCheckOut.ProductSearch(java.util.List&lt;com.woolsworth.userjourney.Products&gt;)&apos;.
+It appears you did not register a data table type.
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.registerDataTableTypeInConfiguration(PickleStepDefinitionMatch.java:96)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:50)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: io.cucumber.datatable.UndefinedDataTableTypeException: Can&apos;t convert DataTable to List&lt;com.woolsworth.userjourney.Products&gt;.
+Please review these problems:
+
+ - There was no table entry or table row transformer registered for com.woolsworth.userjourney.Products.
+   Please consider registering a table entry or row transformer.
+
+ - There was no table cell transformer registered for com.woolsworth.userjourney.Products.
+   Please consider registering a table cell transformer.
+
+ - There was no default table entry transformer registered to transform com.woolsworth.userjourney.Products.
+   Please consider registering a default table entry transformer.
+
+ - There was no default table cell transformer registered to transform com.woolsworth.userjourney.Products.
+   Please consider registering a default table cell transformer.
+
+Note: Usually solving one is enough
+	at io.cucumber.datatable.UndefinedDataTableTypeException.listNoConverterDefined(UndefinedDataTableTypeException.java:102)
+	at io.cucumber.datatable.DataTableTypeRegistryTableConverter.toList(DataTableTypeRegistryTableConverter.java:144)
+	at io.cucumber.datatable.DataTableTypeRegistryTableConverter.convert(DataTableTypeRegistryTableConverter.java:110)
+	at io.cucumber.datatable.DataTable.convert(DataTable.java:478)
+	at io.cucumber.core.stepexpression.StepExpressionFactory.lambda$createExpression$0(StepExpressionFactory.java:66)
+	at io.cucumber.core.stepexpression.DataTableArgument.getValue(DataTableArgument.java:20)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:47)
+	... 24 more
+</pre></div></td>
+<td>3</td>
+<td>com.woolsworth.runner.Runner@73eb439a</td></tr>
+</table><p>
+</body>
+</html>
